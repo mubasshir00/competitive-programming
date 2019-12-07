@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+    set<int>s;
+    int n,a,b;
+    cin>>n;
+    cin>>a;
+    for(int i=0;i<a;i++)
+    {
+        int k;
+        cin>>k;
+        s.insert(k);
+    }
+    cin>>b;
+    for(int i=0;i<b;i++)
+    {
+        int l ;
+        cin>>l;
+        s.insert(l);
+    }
+   int si = s.size();
+   if(si>=n)cout<<"I become the guy."<<endl;
+   else cout<<"Oh, my keyboard!"<<endl;
+    return 0 ;
+}

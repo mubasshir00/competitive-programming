@@ -1,0 +1,15 @@
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+    int n,m;
+    int tc ;
+    scanf("%d",&tc);
+    while(tc--)
+    {
+        scanf("%d %d",&n,&m);
+        int a = (n/3)*(m/3);
+        printf("%d\n",a);
+    }
+    return 0 ;
+}
