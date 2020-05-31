@@ -1,17 +1,28 @@
 #include<bits/stdc++.h>
-using namespace std  ;
+using namespace std ;
+int feyn[1000];
+long long Feynman(long long x)
+{
+    if(x==1)return 1 ;
+
+    feyn[x]= (x*x)+Feynman(x-1);
+
+    return feyn[x];
+
+}
+
 int main()
 {
-    int n ;
-    int r =0 ;
-    while(scanf("%d",&n))
-    {
-        if(n==0)break;
+
+
+        long long a;
+        while(cin>>a){
+
+        if(a==0)return 0 ;
         else
-        {
-            r  = ((2*n)+1)*(n+1)*n;
-            cout<<r/6<<endl;
+        cout<<Feynman(a)<<endl;
         }
-    }
+
+
     return 0 ;
 }
