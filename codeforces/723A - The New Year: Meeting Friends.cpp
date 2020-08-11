@@ -2,13 +2,19 @@
 using namespace std ;
 int main()
 {
-   int arr[5];
-   for(int i=0;i<3;i++)
-   {
-       cin>>arr[i];
-   }
-   sort(arr,arr+3);
-   cout<<abs(arr[0]-arr[1])+abs(arr[1]-arr[2])<<endl;
-    return 0 ;
- 
+    int n ;
+    int arr[5];
+    n=3;
+    for(int i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int sum =0;
+    sort(arr,arr+n);
+    for(int i=0;i<n-1;i++)
+    {
+        sum = sum+(arr[i+1]-arr[i]);
+    }
+    cout<<sum<<endl;
+    return 0;
 }
