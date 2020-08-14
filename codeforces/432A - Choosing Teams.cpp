@@ -2,21 +2,21 @@
 using namespace std ;
 int main()
 {
-    int n,k,count=0;
-    vector<int>v;
+    int n ,k;
     cin>>n>>k;
+    int count =0;
+    int arr[9000];
     for(int i=0;i<n;i++)
     {
         int x ;
         cin>>x;
-        v.push_back(x);
+        arr[i]=(5-x);
     }
-
-    for(int i=0;i<v.size();i++)
+    for(int i=0;i<n;i++)
     {
-        if(5-v[i]>=k)count++;
+        if(arr[i]>=k)count++;
     }
-    cout<<count/3<<endl;
+    cout<<(count-(count%3))/3<<endl;
 
-    return 0 ;
+    return 0;
 }
