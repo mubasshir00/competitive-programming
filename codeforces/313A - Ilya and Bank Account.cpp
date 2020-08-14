@@ -2,12 +2,32 @@
 using namespace std ;
 int main()
 {
-    int n;
-    cin>>n;
-    if(n>0)cout<<n;
+    string s ;
+    cin>>s;
+    if(s[0]!='-')cout<<s<<endl;
+    else if(s.length()==3)
+    {
+       // cout<<s.length()<<endl;
+        if(s[2]=='0')
+        {
+            cout<<"0"<<endl;
+        }
+        else
+        {
+            cout<<s[0]<<min(s[1]-'0',s[2]-'0')<<endl;
+        }
+
+    }
     else
     {
-        cout<<max(n/10,(n/100)*10+(n%10))<<endl;
+
+            for(int i=0;i<s.length()-2;i++)
+            {
+                cout<<s[i];
+            }
+            cout<<min(s[s.length()-2]-'0',s[s.length()-1]-'0')<<endl;
+
     }
-    return 0 ;
+    return 0;
 }
+
