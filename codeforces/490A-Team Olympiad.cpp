@@ -2,44 +2,43 @@
 using namespace std ;
 int main()
 {
-   // vector<int>v;
+    int n ;
+    cin>>n;
+    int arr[5009];
     vector<int>v1;
     vector<int>v2;
     vector<int>v3;
-    int v[10000];
-    int n ;
-    cin>>n;
     for(int i=0;i<n;i++)
     {
-        cin>>v[i];
-        if(v[i]==1){
-              v1.push_back(i);
-        }
-        if(v[i]==2)
-        {
-            v2.push_back(i);
-        }
-        if(v[i]==3)
-        {
-            v3.push_back(i);
-        }
-
-
+        cin>>arr[i];
     }
-    int c1=0,c2=0,c3=0;
+    int temp1 =0,temp2=0,temp3=0;
     for(int i=0;i<n;i++)
     {
-        if(v[i]==1)c1++;
-        if(v[i]==2)c2++;
-        if(v[i]==3)c3++;
-
+        if(arr[i]==1)
+        {
+            temp1++;
+            v1.push_back(i+1);
+        }
+        if(arr[i]==2)
+        {
+            temp2++;
+            v2.push_back(i+1);
+        }
+        if(arr[i]==3)
+        {
+            temp3++;
+            v3.push_back(i+1);
+        }
     }
-    int a = min(c1,min(c2,c3));
-    cout<<a<<endl;
-    for(int i=0;i!=a;i++)
+    int ans = min(temp1,min(temp2,temp3));
+    cout<<ans<<endl;
+    if(ans!=0)
     {
-        cout<<v1[i]+1<<" "<<v2[i]+1<<" "<<v3[i]+1<<endl;
+         for(int i=0;i<ans;i++)
+         {
+             cout<<v1[i]<<" "<<v2[i]<<" "<<v3[i]<<endl;
+         }
     }
-
-    return 0 ;
+    return 0;
 }
