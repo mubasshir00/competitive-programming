@@ -2,26 +2,23 @@
 using namespace std ;
 int main()
 {
-    int n ;
+    long long n ;
     cin>>n;
-    if(n%2==0)
+    if((n&1)==1)
     {
-        int a = n/2;
-        cout<<a<<endl;
-        for(int i=0;i<a;i++)
+        cout<<(n>>1)<<endl;
+        for(int i=0;i<(n>>1)-1;i++)
         {
-            cout<<"2 ";
+            cout<<2<<" ";
+        }
+        cout<<3<<endl;
+    }
+    else{
+            cout<<(n>>1)<<endl;
+        for(int i=0;i<(n>>1);i++)
+        {
+            cout<<2<<" ";
         }
     }
-    else
-    {
-        int a = (n-1)/2;
-        cout<<a<<endl;
-        for(int i=0;i<a-1;i++)
-        {
-            cout<<"2 ";
-        }
-        cout<<"3";
-    }
-    return 0 ;
+    return 0;
 }
