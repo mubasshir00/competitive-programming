@@ -2,31 +2,22 @@
 using namespace std ;
 int main()
 {
-    long long n ,m ;
-    long long a ;
+    int n ,m;
     cin>>n>>m;
-    if(m>n)
+    int temp1 = ((n-(n%2))/2) + (n%2);
+   // cout<<temp1<<endl;
+    if(n<m)
     {
         cout<<"-1"<<endl;
         return 0;
     }
-    if(n%2==1)
+    if(temp1%m!=0)
     {
-      a= (n/2)+1;
+        //(((temp1/m)+1)*m);
+
+        temp1= temp1+(m-(temp1%m));
+        cout<<temp1<<endl;
     }
-    else
-    {
-        a=n/2;
-    }
-    int b = a%m;
-    if(b==0)
-    {
-        cout<<a<<endl;
-    }
-    else
-    {
-        int c= a/m ;
-        cout<< (c+1)*m<<endl;
-    }
-    return 0 ;
+    else cout<<temp1<<endl;
+    return 0;
 }
