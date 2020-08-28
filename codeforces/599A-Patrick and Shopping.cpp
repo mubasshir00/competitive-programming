@@ -1,14 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std ;
+
+
 int main()
 {
-    int a,b,c,d,e,f,g,h;
-    cin>>a>>b>>c;
-    d=a+b+c;
-    e=a+c+c+a;
-    f=b+b+a+a;
-    g=b+c+c+b;
-    int m = min(g,min(f,min(d,e)));
-    cout<<m;
+    long long d1,d2,d3;
+    cin>>d1>>d2>>d3;
+    cout<<min((d1+d2+d3),min(((d1+d2)*2),min(  ((d1+d3)*2),((d2+d3)*2))));
+    //((d1+d3)*2),((d2+d3)*2)
     return 0 ;
 }
