@@ -1,16 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std ;
-long long int fac(long long int n)
+int result[1000] = {0};
+int fact(int n)
 {
-    if(n==0)return 1;
-    return n*fac(n-1);
+    if(n>=0){
+        result[0]=1;
+        for(int i=1;i<=n;i++)
+        {
+            result[i]=i*result[i-1];
+        }
+        return result[n];
+    }
+
 }
 int main()
 {
-    long long int a,b;
-    cin>>a>>b;
-    long long int c = min(a,b);
-    cout<<fac(c)<<endl;
-
-    return 0 ;
+    int n,m;
+    cin>>n>>m;
+    cout<<fact(min(n,m))<<endl;
+    return 0;
 }
