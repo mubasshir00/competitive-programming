@@ -1,21 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std ;
-long long m =10;
-long long binpow(long long a, long long b) {
-    a %= m;
-    long long res = 1;
-    while (b > 0) {
-        if (b & 1)
-            res = res * a % m;
-        a = a * a % m;
-        b >>= 1;
-    }
-    return res;
-}
 int main()
 {
-   long long n ;
-   cin>>n;
-   cout<<binpow(1378,n)<<endl;
-    return 0 ;
+    long long int n ;
+    cin>>n;
+    if(n==0)cout<<"1"<<endl;
+    else if((n&3)==0)cout<<"6"<<endl;
+    else if((n&3)==1)cout<<"8"<<endl;
+    else if((n&3)==2)cout<<"4"<<endl;
+    else if((n&3)==3)cout<<"2"<<endl;
+    return 0;
 }
