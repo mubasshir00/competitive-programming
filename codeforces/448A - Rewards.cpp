@@ -1,27 +1,18 @@
 #include<bits/stdc++.h>
-using namespace std ;
+using namespace std;
 int main()
 {
-   int a1,a2,a3;
-   int b1,b2,b3;
-   int n,a,b ;
-   int sum=0 ;
-   int sumb=0;
+   double a1,a2,a3;
+   double b1,b2,b3;
    cin>>a1>>a2>>a3;
    cin>>b1>>b2>>b3;
+   int n;
    cin>>n;
-   sum=(a1+a2+a3);
-   sumb=(b1+b2+b3);
-   if(sum%5!=0)
-   {
-       a++;
+   double tempCup = ceil((a1+a2+a3)/5);
+   double tempMedal = ceil((b1+b2+b3)/10);
+   if((tempCup + tempMedal)<=n){
+    cout<<"YES"<<endl;
    }
-   if(sumb%10!=0)
-   {
-       b++;
-   }
-   if(((sum/5)+(sumb/10)+a+b)<=n)cout<<"YES"<<endl;
    else cout<<"NO"<<endl;
-
-    return 0 ;
+    return 0;
 }
