@@ -1,22 +1,24 @@
 #include<bits/stdc++.h>
-using namespace std ;
+using namespace std;
+
 int main()
 {
-    long long n ;
-    cin>>n;
-    while(n--)
+    int tc;
+    cin>>tc;
+    int x =0;
+    while(tc--)
     {
-        long long tc;
-        cin>>tc;
-        if(tc==2)cout<<"2"<<endl;
-     
-       
-        else if(tc%2==1)
-        {
-            cout<<"1"<<endl;
-        }
-        else cout<<"0"<<endl;
-
+      long long n;
+      cin>>n;
+      if(n==2)
+      {
+          cout<<"2"<<endl;
+      }
+      else if( (n&1)==1)
+      {
+          cout<<"1"<<endl;
+      }
+      else cout<<"0"<<endl;
     }
     return 0;
 }
