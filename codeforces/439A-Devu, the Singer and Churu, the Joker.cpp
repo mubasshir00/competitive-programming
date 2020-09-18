@@ -1,39 +1,33 @@
 #include<bits/stdc++.h>
 using namespace std ;
-typedef long long ll ;
-const int N = 10e+5;
-ll v[N];
 int main()
 {
-    int n,m;
+    int n ,m;
     cin>>n>>m;
-    int sum=0;
-    for(int i=0;i<n;i++)
-    {
-        cin>>v[i];
+    int arr[10000];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
-
-    for(int i=0;i<n-1;i++)
-    {
-        sum=sum+v[i]+10;
+ 
+   int sum=0;
+   for(int i=0;i<n-1;i++){
+    sum=sum+(arr[i]+10);
+   }
+   sum=sum+arr[n-1];
+   if(sum <= m){
+    if(sum==m){
+        cout<<(n-1)*2<<endl;
     }
-    sum = sum+v[n-1];
-    //cout<<sum;
-    if(sum>m)
-    {
-        cout<<"-1"<<endl;
+    else {
+            if((m-sum)>=5){
+                cout<<((n-1)*2)+((m-sum)/5)<<endl;
+            }
+            else{
+                 cout<<(n-1)*2<<endl;
+            }
+ 
     }
-    else
-
-    {
-        if(m<=5){
-        cout<<"0"<<endl;
-        return 0;
-    }
-        int x = sum+5;
-
-        cout<<((n-1)*2 +1 ) + ((m-x)/5)<<endl;
-        //cout<<((n-1)*2 );
-    }
-    return 0 ;
+   }
+   else cout<<"-1"<<endl;
+    return 0;
 }
