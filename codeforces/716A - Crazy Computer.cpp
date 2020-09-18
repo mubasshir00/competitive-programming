@@ -1,31 +1,27 @@
+//I do code for marry Tamanna .
 #include<bits/stdc++.h>
 using namespace std ;
-typedef long long ll;
-const int N = 1e5 + 3;
-ll v[N];
 int main()
 {
-    long long n,c;
-
-    cin>>n>>c;
-
-    int count = 1,ab =0;
-    for(int i=0;i<n;i++)
-    {
-        cin>>v[i];
+    long long n,m;
+    cin>>n>>m;
+    vector<long long>v;
+    for(long long i=0;i<n;i++){
+        long long x ;
+        cin>>x;
+        v.push_back(x);
     }
-    for(int i=0;i<n-1;i++)
+    //sort(v.begin(),v.end());
+    long long count =0;
+    for(long long i=0;i<v.size()-1;i++)
     {
-        if((v[i+1]-v[i])<=c)
-        {
+        if((v[i+1]-v[i])>m){
+                count =0;
+        }
+        else {
             count++;
         }
-        else
-        {
-           count=1;
-        }
     }
-    cout<<count<<endl;
-
-    return 0 ;
+    cout<<count+1<<endl;
+    return 0;
 }
