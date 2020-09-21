@@ -2,33 +2,26 @@
 using namespace std ;
 int main()
 {
-    long long tc;
+    int tc;
     cin>>tc;
-    long long n ,x,a,b;
-    while(tc--)
-    {
+    while(tc--){
+        int n,x,a,b;
         cin>>n>>x>>a>>b;
-        long long y = abs(a-b);
-
-        long long z = y+x ;
-        if(z<n)
-        {
-            cout<<z<<endl;
+        if(a>b){
+            swap(a,b);
         }
-        else
-        {
-            n=n-1;
-            if((z+x)<n)
-            {
-                cout<<z+x<<endl;
-            }
-            else
-            {
-                cout<<n<<endl;
-            }
-
-
+        if( (b+x)<=n){
+            cout<<abs(a-(b+x))<<endl;
         }
+        else if( (b+x)>n ){
+            if( (a-(x-(n-b)))>=1 ){
+                cout<<abs( (a-(x-(n-b))) - (n) )<<endl;
+            }
+            else {
+                cout<<n-1<<endl;
+            }
+        }
+
     }
-    return 0 ;
+    return 0;
 }
