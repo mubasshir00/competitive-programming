@@ -2,64 +2,35 @@
 using namespace std ;
 int main()
 {
-    int n,t;
+    int n ;
     cin>>n;
-
-    int arr[5]={0};
- for(int i=0;i<n;i++)
-    {
-        cin>>t;
-        arr[t]++;
-
+    int arr[100009];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
     }
     if(n==1){
-        cout<<"1";
-        return 0 ;
+        cout<<1<<endl;
+        return 0;
     }
-
-   int ans = arr[4]+arr[3]+(arr[2]/2);
-   int Extra1 = max(0,arr[1]-arr[3]);
-   int z = Extra1;
-   if(z%4==0 )
-   {
-      if(arr[2]%2==1)
-           {
-               ans = ans +(z/4)+1;
-           }
-           else{
-           ans = ans + (z/4);
-           }
+    int count4 =0;
+    int count3 =0 ;
+    int count2 =0;
+    int count1 =0;
+    for(int i=0;i<n;i++){
+        if(arr[i]==4)count4++;
+        if(arr[i]==3)count3++;
+        if(arr[i]==2)count2++;
+        if(arr[i]==1)count1++;
+    }
+   if(count1>count3){
+     count1 = count1-count3;
    }
-   else
-   {
-
-           if(z%4==3)
-           {
-               z=z-3;
-               if(arr[2]%2==1)
-               {
-                   ans = ans + (z/4) + 2 ;
-               }
-               else
-               {
-                   ans = ans + (z/4)+1;
-               }
-           }
-           else
-           {
-
-                   ans = ans + (z/4) +1;
-
-           }
-
-
-
+   else count1 = 0;
+   int temp2 = count2%2;
+   count2 =ceil(count2/2.00);
+   if(count1!=0 and temp2==1){
+        count1 = count1 - 2;
    }
-   cout<<ans<<endl;
-
-
-
-
-
-    return 0 ;
+   cout<<count4+count3+count2+ceil(count1/4.00)<<endl;
+    return 0;
 }
