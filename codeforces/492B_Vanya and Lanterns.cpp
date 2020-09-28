@@ -2,31 +2,30 @@
 using namespace std ;
 int main()
 {
-    int n,m;
-    double a,b;
-    vector<int>v;
-    cin>>n>>m;
-    for(int i=0;i<n;i++)
-    {
-        int x ;
-        cin>>x;
-        v.push_back(x);
+    long long n,l;
+    cin>>n>>l;
+    int arr[10000];
+    for(long long i=0;i<n;i++){
+        cin>>arr[i];
     }
-    sort(v.begin(),v.end());
-    int last = v[v.size()-1];
-    //cout<<last;
-    //int md = v[1]-v[0];
-    int md=0;
-    int nt=0;
-    for(int i=0;i<n-1;i++)
-    {
-        md=max(md,v[i+1]-v[i]);
+    sort(arr,arr+n);
+    int ans =0;
+    for(long long i=0;i<n-1;i++){
+        ans = max(ans,(arr[i+1]-arr[i]));
     }
-    int k =(max(v[0],m-last))*2;
-    //cout<<md;
-   a = max(md,k);
-   printf("%.10llf\n",a/2);
-
-
-    return 0 ;
+    if(arr[0]>(ans/2.0) and arr[0]>l-arr[n-1]){
+       // cout<<arr[0];
+      // double = arr[0];
+       cout<<arr[0]<<".0000000000"<<endl;
+    }
+    else if(l-arr[n-1]>(ans/2.0)){
+        cout<<l-arr[n-1]<<".0000000000"<<endl;
+    }
+    else
+    {
+         printf("%.10f",ans/2.0);
+       // cout<<(ans/2.0)<<endl;
+    }
+   // cout<<ans<<endl;
+    return 0;
 }
