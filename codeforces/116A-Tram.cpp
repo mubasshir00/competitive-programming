@@ -2,31 +2,23 @@
 using namespace std ;
 int main()
 {
-    int n ;
-    cin>>n;
-    int a[n];
-    int b[n];
-    for(int i=0;i<n;i++)
+    long long tc;
+    vector<pair<int,int>>v;
+    vector<int>vect;
+    cin>>tc;
+    while(tc--)
     {
-        cin>>a[i]>>b[i];
+        int x,y;
+        cin>>x>>y;
+        v.push_back(make_pair(x,y));
     }
-        int res=0;
-    res=b[0];
-    int ans =res;
-    for(int i=1;i<n;i++)
+    vect.push_back(v[0].second);
+    for(int i=0;i<v.size()-1;i++)
     {
-        res = abs(a[i]-abs(b[i]+res));
-        //cout<<res<<endl;
-        ans = max(ans,res);
+        v[i+1].second=v[i+1].second+(abs(v[i+1].first-v[i].second));
+        vect.push_back(v[i+1].second);
     }
-    if(ans==0)
-    {
-        sort(b,b+n);
-        cout<<b[n-1]<<endl;
-    }
-    else
-    {
-        cout<<ans<<endl;
-    }
-    return 0 ;
+   sort(vect.begin(),vect.end());
+   cout<<vect[vect.size()-1]<<endl;
+    return 0;
 }
