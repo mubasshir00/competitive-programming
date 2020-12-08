@@ -2,20 +2,16 @@
 using namespace std ;
 int main()
 {
-    int n ,m,a,b;
+    int n,m,a,b;
     cin>>n>>m>>a>>b;
-   if(n%m==0)
-    {
-        int tempX = (n/m)*b;
-        cout<<min(tempX,(n*a))<<endl;
+    int temp4 = INT_MAX;
+    if(n<=m){
+        temp4 = b;
     }
-    else
-    {
-       // int tempA = (((n/m)*b)+((n%m)*a));
-       // cout<<tempA<<endl;
-      //  int tempB = (((n/m)*b)+b) ;
-      //  cout<<tempB<<endl;
-       cout<<min( n*a , min( (((n/m)*b)+((n%m)*a)) , (((n/m)*b)+b) ))<<endl;
-    }
+    int temp1 = n*a;
+    int temp2 = ((( (n-(n%m)) /m)) * b)+b;
+    int temp3 = (( (n-(n%m)) /m)*b) + ((n%m)*a);
+   // cout<<temp1<<" "<<temp2<<" "<<temp3<<" "<<temp4<<endl;
+    cout<<min(temp1,min(temp2,min(temp3,temp4)))<<endl;
     return 0;
 }
