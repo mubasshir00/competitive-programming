@@ -2,7 +2,7 @@
 using namespace std ;
 int main()
 {
-    int n ;
+    long long n;
     cin>>n;
     while(n--)
     {
@@ -10,14 +10,7 @@ int main()
         cin>>a>>b;
         int x = min(a,b);
         int y = max(a,b);
-        if(x+x<y)
-        {
-            cout<<pow(y,2)<<endl;
-        }
-        else
-        {
-            cout<<pow(x+x,2)<<endl;
-        }
+        cout<<max( pow((x+x),2) , pow(y,2) )<<endl;
     }
-    return 0;
+    return 0 ;
 }
