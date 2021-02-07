@@ -2,14 +2,26 @@
 using namespace std ;
 int main()
 {
-    int n,a=0;
+    long long int n;
+    int count = 1;
     cin>>n;
-    while(n)
-    {
-        a=a+n%2;
-        n=n/2;
-
+    if(n==1){
+        cout<<1<<endl;
+        return 0;
     }
-    cout<<a;
+    while(1)
+    {
+        if(n%2==1){
+            count++;
+            n--;
+        }
+        else {
+            n=n/2;
+        }
+        if(n<=1){
+            break;
+        }
+    }
+    cout<<count<<endl;
     return 0 ;
 }
