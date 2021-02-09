@@ -2,35 +2,33 @@
 using namespace std ;
 int main()
 {
-    int b;
-    int barray[1000];
-    int g ;
-    int garray[1000];
-    cin>>b;
-    for(int i=0;i<b;i++)
+    int n ,m ;
+    int arr1[1000],arr2[1000];
+    cin>>n;
+    for(int i=0;i<n;i++)
     {
-        cin>>barray[i];
+        cin>>arr1[i];
     }
-    cin>>g;
-    for(int i=0;i<g;i++)
+    cin>>m;
+    for(int i=0;i<m;i++)
     {
-        cin>>garray[i];
+        cin>>arr2[i];
     }
-    int count=0;
-    sort(barray,barray+b);
-    sort(garray,garray+g);
-   for(int i=0;i<b;i++)
-   {
-       for(int j=0;j<g;j++)
-       {
-           if(barray[i]==garray[j] || barray[i]+1 == garray[j] || barray[i]-1 == garray[j] || barray[i] == garray[j]+1 || barray[i]==garray[j]-1)
-           {
-               count++;
-               garray[j]=-22;
-               break;
-           }
-       }
-   }
-   cout<<count<<endl;
+    sort(arr1,arr1+n);
+    sort(arr2,arr2+m);
+    int j =0;
+    int count =0;
+    int temp =0;
+    for(int i=0;i<n;i++)
+        for( j=temp;j<m;j++)
+        {
+            if(((arr1[i]-1 == arr2[j]) || (arr1[i]+1 == arr2[j]) || (arr1[i]==arr2[j])) and (arr2[j]!=0)){
+                count++;
+               arr2[j]=0;
+                break;
+            }
+        }
+
+    cout<<count<<endl;
     return 0;
 }
