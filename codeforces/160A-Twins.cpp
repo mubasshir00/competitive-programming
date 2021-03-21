@@ -1,29 +1,28 @@
-    #include<bits/stdc++.h>
-    using namespace std ;
-    int main()
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+    int n ;
+    cin>>n;
+    int arr[1000];
+    int sum =0;
+    for(int i=0;i<n;i++)
     {
-        int n ;
-        cin>>n;
-        int arr[1000];
-        int sum =0;
-        for(int i=0;i<n;i++)
-        {
-            cin>>arr[i];
-            sum=sum+arr[i];
-        }
-        sort(arr,arr+n);
-        int half = (sum/2);
-        int count =0;
-        int sum1=0;
-        for(int i=n-1;i>=0;i--)
-        {
-            sum1=sum1+arr[i];
-            if(sum1<=half)
-            {
-                count++;
-            }
-        }
-        cout<<count+1;
-     
-        return 0 ;
+        cin>>arr[i];
+        sum=sum+arr[i];
     }
+    sum = floor(sum/2);
+    sort(arr,arr+n);
+    reverse(arr,arr+n);
+    int tempSum =0,count=0;
+    for(int i=0;i<n;i++)
+    {
+        tempSum = tempSum + arr[i];
+            count++;
+        if(tempSum>sum){
+            break;
+        }
+    }
+    cout<<count<<endl;
+    return 0;
+}
