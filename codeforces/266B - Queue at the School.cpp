@@ -2,18 +2,22 @@
 using namespace std ;
 int main()
 {
-    int n,t ;
-    cin>>n>>t;
-    string s ;
+    int n , x ;
+    cin>>n>>x;
+    string s;
     cin>>s;
-    while(t--){
-        for(int i=0;i<s.length();i++)
+    while(1){
+    if(x==0){
+        break;
+    }
+    for(int i=1;i<n;i++)
     {
-        if(s[i]=='B' and s[i+1]=='G'){
-            swap(s[i],s[i+1]);
-            i++;
+        if(s[i]=='G' and s[i-1]=='B'){
+            swap(s[i-1],s[i]);
+            i=i+1;
         }
     }
+    x--;
     }
     cout<<s<<endl;
     return 0;
