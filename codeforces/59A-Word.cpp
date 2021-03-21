@@ -1,31 +1,26 @@
-    #include<bits/stdc++.h>
-    using namespace std ;
-    int main()
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+    string s ;
+    int countL =0 ,countU =0;
+    cin>>s;
+    for(int i=0;i<s.length();i++)
     {
-        string s ;
-        cin>>s;
-        int countLower =0;
-        int countUpper =0 ;
-        for(int i=0;i<s.length();i++)
-        {
-            if(s[i]>='a' and s[i]<='z')
-            {
-                countLower++;
-            }
-            if(s[i]>='A' and s[i]<= 'Z')
-            {
-                countUpper++;
-            }
-     
+        if(islower(s[i])){
+            countL++;
         }
-        if(countLower>=countUpper)
-        {
-            transform(s.begin(),s.end(),s.begin(),::tolower);
+        if(isupper(s[i])){
+            countU++;
         }
-        else
-        {
-            transform(s.begin(),s.end(),s.begin(),::toupper);
-        }
-        cout<<s<<endl;
-        return 0 ;
     }
+    if(countU>countL){
+        transform(s.begin(),s.end(),s.begin(),::toupper);
+        cout<<s<<endl;
+    }
+    else {
+        transform(s.begin(),s.end(),s.begin(),::tolower);
+        cout<<s<<endl;
+    }
+    return 0;
+}
