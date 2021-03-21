@@ -1,31 +1,35 @@
 #include<bits/stdc++.h>
 using namespace std ;
 
-bool check(int s){
-	set<int>S;
-	while(s!=0){
-		S.insert(s%10);
-		s=s/10;
-	}
-	if(S.size()==4){
-		return true;
-	}
-	else return false ;
+bool checkYear(int n )
+{
+    set<int>S;
+    S.insert(floor(n/1000));
+    while(1){
+        S.insert(n%10);
+        n=n/10;
+        if(n<10){
+            break;
+        }
+    }
+    if(S.size()==4){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 int main()
 {
-    int n;
+    int n ;
     cin>>n;
-    n++;
     while(1){
-    if(!check(n)){
-    	n++;
-	}
-	else {
-		cout<<n<<endl;
-		break;
-	}
-}
-	return 0;
+        n++;
+        if(checkYear(n)){
+            cout<<n<<endl;
+            return 0;
+        }
+    }
+    return 0;
 }
