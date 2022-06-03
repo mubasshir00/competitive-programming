@@ -1,3 +1,5 @@
+//be careful kid . try to sort vector via using reference . otherwise it will waste your time 
+
 #include<bits/stdc++.h>
 using namespace std ;
 
