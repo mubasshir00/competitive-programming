@@ -1,6 +1,4 @@
-/*
- * C++ Program to Implement the RSA Algorithm
- */
+
 #include<iostream>
 #include<math.h>
 #include<string.h>
@@ -137,5 +135,5 @@ void decrypt()
     m[i] = -1;
     cout << "\nTHE DECRYPTED MESSAGE IS\n";
     for (i = 0; m[i] != -1; i++)
-        printf("%c", m[i]);
+        cout<<m[i];
 }

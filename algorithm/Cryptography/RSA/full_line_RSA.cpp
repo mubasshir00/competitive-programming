@@ -154,15 +154,27 @@ int main()
         // msg = str;
         encryption_converted(str);
     }
-
+    vector<string>new_encrypted;
+    vector<string> new_decrypted;
     cout<<"Encrypted Text : "<<endl;
     for(int i=0;i<encrypted_text.size()-1;i++){
-        cout<<encrypted_text[i];
+        // cout<<encrypted_text[i]<<"A";
+        new_encrypted.push_back(encrypted_text[i]);
+    }
+    for (int i = 0; i < new_encrypted.size() - 1; i++)
+    {
+        cout<<new_encrypted[i];
+       // new_encrypted.push_back(encrypted_text[i]);
     }
     cout<<endl;
     cout << "Decrypted Text : " << endl;
-    for (int k = 0; k < decrypted_text.size();k++){
-        cout << decrypted_text[k];
+    for (int k = 0; k < decrypted_text.size()-1;k++){
+        //cout << decrypted_text[k];
+        new_decrypted.push_back(decrypted_text[k]);
+    }
+    for (int k = 0; k < decrypted_text.size() - 2; k++)
+    {
+        cout << new_decrypted[k];
     }
     cout<<endl;
     return 0;

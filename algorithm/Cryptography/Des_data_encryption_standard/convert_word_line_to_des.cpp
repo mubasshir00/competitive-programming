@@ -1,4 +1,3 @@
-// Including dependancies
 #include<bits/stdc++.h>
 using namespace std;
 // Array to hold 16 keys
