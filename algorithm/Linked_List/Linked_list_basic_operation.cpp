@@ -103,6 +103,20 @@ int recursion_max(struct Node *p)
     }
 }
 
+struct Node *Lsearch(struct Node *p, int key)
+{
+    while (p != NULL)
+    {
+        if (key == p->data)
+        {
+            return p;
+        }
+        p = p->next;
+    }
+
+    return NULL;
+}
+
 int main()
 {
 
@@ -114,6 +128,13 @@ int main()
     // cout << "Array sum : " << sum_recursion(first);
     // display_recursion(first);
     // cout<<"Maximum : "<<Max(first)<<endl;
-    cout << "Maximum : " << recursion_max(first)<<endl;
+//     cout << "Maximum : " << recursion_max(first)<<endl;
+    struct Node *temp;
+    temp = Lsearch(first,6);
+    if(temp){
+        printf("Found");
+    } else {
+        printf("Not Found");
+    }
     return 0;
 }
