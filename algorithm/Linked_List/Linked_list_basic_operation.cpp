@@ -117,6 +117,17 @@ struct Node *Lsearch(struct Node *p, int key)
     return NULL;
 }
 
+struct Node *recursion_linear_search(struct Node *p,int key){
+     if(p==NULL){
+        return NULL;
+     }
+     if(key == p->data){
+        return p;
+     }
+
+     return recursion_linear_search(p->next, key);
+}
+
 int main()
 {
 
@@ -130,7 +141,8 @@ int main()
     // cout<<"Maximum : "<<Max(first)<<endl;
 //     cout << "Maximum : " << recursion_max(first)<<endl;
     struct Node *temp;
-    temp = Lsearch(first,6);
+//     temp = Lsearch(first,6);
+    temp = recursion_linear_search(first,5);
     if(temp){
         printf("Found");
     } else {
