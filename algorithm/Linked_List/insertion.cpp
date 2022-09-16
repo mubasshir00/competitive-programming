@@ -28,6 +28,36 @@ void create_linked_list(int arr[], int n)
     }
 }
 
+void insert_into_sorted_linked_list(struct Node *p, int x)
+{
+    struct Node *t, *q = NULL;
+    t = (struct Node *)malloc(sizeof(struct Node));
+    t->data = x;
+    t->next = NULL;
+    if (first == NULL)
+    {
+        first = t;
+    }
+    else
+    {
+        while (p && p->data < x)
+        {
+            q = p;
+            p = p->next;
+        }
+        if (p == first)
+        {
+            t->next = first;
+            first = t;
+        }
+        else
+        {
+            t->next = q->next;
+            q->next = t;
+        }
+    }
+}
+
 int count(struct Node *p)
 {
     int count = 0;
@@ -84,6 +114,10 @@ int main()
 
     insert(first, 0, 100);
 
+
+    display(first);
+    insert_into_sorted_linked_list(first, 50);
+    cout << endl << "After Insertion : " << endl;
     display(first);
 
     return 0;
