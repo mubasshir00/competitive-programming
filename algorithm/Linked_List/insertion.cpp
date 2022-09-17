@@ -105,7 +105,36 @@ void insert(struct Node *p, int index, int x)
         p->next = t;
     }
 }
-
+int delete_linked_list(struct Node *p, int index)
+{
+    struct Node *q;
+    int x = -1;
+    int i;
+    if (index < 1 || index > count(p))
+    {
+        return -1;
+    }
+    if (index == 1)
+    {
+        q = first;       // q point to first node
+        x = first->data; // take data from first node
+        first = first->next;
+        delete q;
+        return x;
+    }
+    else
+    {
+        for (i = 0; i < index - 1; i++)
+        {
+            q = p;
+            p = p->next; // p point on the node whic want to delete
+        }
+        q->next = p->next; // p remove
+        x = p->data;
+        delete p;
+        return x;
+    }
+}
 int main()
 {
     int arr[] = {4, 5, 1, 23, 1, 50, 70, 10};
@@ -115,10 +144,12 @@ int main()
     insert(first, 0, 100);
 
 
-    display(first);
-    insert_into_sorted_linked_list(first, 50);
-    cout << endl << "After Insertion : " << endl;
-    display(first);
+    // display(first);
+    // insert_into_sorted_linked_list(first, 50);
+    // cout << endl << "After Insertion : " << endl;
+    // display(first);
+
+    cout << delete_linked_list(first, 5);
 
     return 0;
 }
