@@ -2,7 +2,7 @@
 using namespace std;
 int fibon(int n)
 {
-    int fib[n];
+    int fib[n+2];
     fib[0] = 0;
     fib[1] = 1;
     for (int i = 2; i <= n; i++)
